@@ -39,6 +39,8 @@
 
 #define VARx(type,name) VAR(name, type name)
 
+// 多线程下：VAR(now_floor,ev_stamp now_floor) = ev_stamp now_floor
+// 单线程下：VAR(now_floor,ev_stamp now floor) = static ev_stamp now_floor
 VARx(ev_tstamp, now_floor) /* last time we refreshed rt_time */
 VARx(ev_tstamp, mn_now)    /* monotonic clock "now" */
 VARx(ev_tstamp, rtmn_diff) /* difference realtime - monotonic time */

@@ -820,6 +820,8 @@ typedef int ecb_bool;
 
 #define ecb_function_ ecb_inline
 
+//判断如果gcc的版本号大于3.1或者clang的版本号大于2.8  则使用该功能
+//否则不使用
 #if ECB_GCC_VERSION(3,1) || ECB_CLANG_VERSION(2,8)
   #define ecb_attribute(attrlist)        __attribute__ (attrlist)
 #else
@@ -871,12 +873,15 @@ typedef int ecb_bool;
   #define ecb_deprecated_message(msg) ecb_deprecated
 #endif
 
+//使用编译器特性来强制不内联某个函数
+//如果是微软编译器，并且版本大于等于8.0使用第一种方法，否则使用第二种方法
 #if _MSC_VER >= 1400
   #define ecb_noinline __declspec (noinline)
 #else
   #define ecb_noinline ecb_attribute ((__noinline__))
 #endif
 
+//封装__attribute__(unused)
 #define ecb_unused     ecb_attribute ((__unused__))
 #define ecb_const      ecb_attribute ((__const__))
 #define ecb_pure       ecb_attribute ((__pure__))
@@ -1809,7 +1814,7 @@ typedef struct
   #define ANHE_at_cache(he)
 #endif
 
-#if EV_MULTIPLICITY
+#if EV_MULTIPLICITY   //EV_MULTIPLICITY = 0x7f & 4
 
   struct ev_loop
   {
@@ -1926,19 +1931,24 @@ array_nextsize (int elem, int cur, int cnt)
 {
   int ncur = cur + 1;
 
+//找到一个大于cnt的二的整次幂的数字
   do
     ncur <<= 1;
   while (cnt > ncur);
 
+//如果要求分配内存大小+header大小大于4096字节
   /* if size is large, round to MALLOC_ROUND - 4 * longs to accommodate malloc overhead */
   if (elem * ncur > MALLOC_ROUND - sizeof (void *) * 4)
     {
       ncur *= elem;
+      //这里+elem是为了下面除的时候向上取整,+(MALLOC_ROUND-1)同理
+      //& ~(MALLOC_ROUND-1)是为了取MALLOC_ROUND的整数倍
       ncur = (ncur + elem + (MALLOC_ROUND - 1) + sizeof (void *) * 4) & ~(MALLOC_ROUND - 1);
       ncur = ncur - sizeof (void *) * 4;
       ncur /= elem;
     }
 
+  //返回要分配的元素个数
   return ncur;
 }
 
@@ -3838,6 +3848,7 @@ ev_io_start (EV_P_ ev_io *w) EV_THROW
 
   EV_FREQUENT_CHECK;
 
+//调整优先级，设置active为1，使activecnt+1
   ev_start (EV_A_ (W)w, 1);
   array_needsize (ANFD, anfds, anfdmax, fd + 1, array_init_zero);
   wlist_add (&anfds[fd].head, (WL)w);

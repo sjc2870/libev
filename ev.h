@@ -65,7 +65,7 @@ EV_CPP(extern "C" {)
 # if defined __OPTIMIZE_SIZE__
 #  define EV_FEATURES 0x7c
 # else
-#  define EV_FEATURES 0x7f
+#  define EV_FEATURES 0x7f    //0111 1111
 # endif
 #endif
 
@@ -320,7 +320,7 @@ typedef struct ev_io
 
   int fd;     /* ro */
   int events; /* ro */
-} ev_io;
+};
 
 /* invoked after a specific time, repeatable (based on monotonic clock) */
 /* revent EV_TIMEOUT */
@@ -438,7 +438,7 @@ typedef struct ev_embed
   EV_WATCHER (ev_embed)
 
   struct ev_loop *other; /* ro */
-  ev_io io;              /* private */
+  io;              /* private */
   ev_prepare prepare;    /* private */
   ev_check check;        /* unused */
   ev_timer timer;        /* unused */
@@ -470,7 +470,7 @@ union ev_any_watcher
   struct ev_watcher w;
   struct ev_watcher_list wl;
 
-  struct ev_io io;
+  struct io;
   struct ev_timer timer;
   struct ev_periodic periodic;
   struct ev_signal signal;
