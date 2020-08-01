@@ -207,8 +207,8 @@ epoll_poll (EV_P_ ev_tstamp timeout)
               continue;
             }
         }
-
       fd_event (EV_A_ fd, got);
+
     }
 
   /* if the receive array was full, increase its size */

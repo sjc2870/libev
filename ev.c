@@ -1952,6 +1952,8 @@ array_nextsize (int elem, int cur, int cnt)
   return ncur;
 }
 
+//更新cur为重新分配后的元素个数
+//重新分配内存
 static void * noinline ecb_cold
 array_realloc (int elem, void *base, int *cur, int cnt)
 {
@@ -1962,6 +1964,9 @@ array_realloc (int elem, void *base, int *cur, int cnt)
 #define array_init_zero(base,count)	\
   memset ((void *)(base), 0, sizeof (*(base)) * (count))
 
+//保存原先的元素个数，供最后一步初始化使用
+//更新&cur,得到重新分配后的指针位置
+//初始化新的内存
 #define array_needsize(type,base,cur,cnt,init)			\
   if (expect_false ((cnt) > (cur)))				\
     {								\
@@ -1998,6 +2003,7 @@ ev_feed_event (EV_P_ void *w, int revents) EV_THROW
   W w_ = (W)w;
   int pri = ABSPRI (w_);
 
+  //w->pending在哪里初始化?
   if (expect_false (w_->pending))
     pendings [pri][w_->pending - 1].events |= revents;
   else
@@ -2138,8 +2144,11 @@ fd_change (EV_P_ int fd, int flags)
   unsigned char reify = anfds [fd].reify;
   anfds [fd].reify |= flags;
 
+  //如果reify为0，则代表该描述符在静态初始化后是第一次加入监控
+  //可以测试下，如果改变文件描述符监控的事件，是否会走到这一步
   if (expect_true (!reify))
     {
+      //fdchangecnt代表anfds的实际使用大小，fdchangmax代表当前anfds的最大长度
       ++fdchangecnt;
       array_needsize (int, fdchanges, fdchangemax, fdchangecnt, EMPTY2);
       fdchanges [fdchangecnt - 1] = fd;
@@ -2327,6 +2336,12 @@ downheap (ANHE *heap, int N, int k)
 #endif
 
 /* towards the root */
+//堆中新加入一个元素，向上调整
+//算法思想：
+//  首先记录下该watcher，因为随后该位置可能会被父节点的watcher所覆盖
+//  如果已经调整至根节点或者其active至大于等于父节点的active值则中止
+//  否则下调堆中父节点的位置至该节点，调整父节点结构中记录的在heap中的下标
+//  使该watcher的位置为其父节点的下标，重复以上过程   k即为该watcher的合适位置
 inline_speed void
 upheap (ANHE *heap, int k)
 {
@@ -2336,14 +2351,19 @@ upheap (ANHE *heap, int k)
     {
       int p = HPARENT (k);
 
+      //如果已调整至根节点或者watcher->active<=watcher->parent->active
       if (UPHEAP_DONE (p, k) || ANHE_at (heap [p]) <= ANHE_at (he))
         break;
 
+      //否则将其parent在heap中的位置下调
       heap [k] = heap [p];
+      //调整其父节点watcher结构中记录的在heap中的位置
       ev_active (ANHE_w (heap [k])) = k;
+      //继续向上调整
       k = p;
     }
 
+  //k即为最终调整到的该watcher合适的位置
   heap [k] = he;
   ev_active (ANHE_w (he)) = k;
 }
@@ -3105,6 +3125,9 @@ verify_watcher (EV_P_ W w)
 {
   assert (("libev: watcher has invalid priority", ABSPRI (w) >= 0 && ABSPRI (w) < NUMPRI));
 
+  //检查w应该在pendings数组中的位置存放的确实是该watcher
+  //从这里可以看出，w->priority存储了该watcher在pendings数组中的位置，该位置是存放了同等优先级watcher的数组
+  //w->pending存放了该watcher在同等优先级数组中的位置
   if (w->pending)
     assert (("libev: pending watcher not on pending queue", pendings [ABSPRI (w)][w->pending - 1].w == w));
 }
@@ -3156,10 +3179,14 @@ ev_verify (EV_P) EV_THROW
 
       for (w = w2 = anfds [i].head; w; w = w->next)
         {
+          //检查该watcher的优先级和在pendings数组中的位置
           verify_watcher (EV_A_ (W)w);
 
+          //第一次不进行如下检查
           if (j++ & 1)
             {
+              //检查是否有出现w->next==w的情况
+              //w始终指向w2的后一个元素 即w==w2->next
               assert (("libev: io watcher list contains a loop", w != w2));
               w2 = w2->next;
             }
@@ -3286,12 +3313,14 @@ ev_invoke_pending (EV_P)
 {
   pendingpri = NUMPRI;
 
+  //倒序遍历pendings数组，也就是高优先级先执行
   while (pendingpri) /* pendingpri possibly gets modified in the inner loop */
     {
       --pendingpri;
 
       while (pendingcnt [pendingpri])
         {
+          //对于同等优先级的定时器，也是倒序执行          
           ANPENDING *p = pendings [pendingpri] + --pendingcnt [pendingpri];
 
           p->w->pending = 0;
@@ -3356,6 +3385,10 @@ timers_reify (EV_P)
             ev_timer_stop (EV_A_ w); /* nonrepeating: stop timer */
 
           EV_FREQUENT_CHECK;
+          //这里先放入rfeeds数组的作用是？为什么不直接放入pengdings数组？
+          //因为要保证在同等优先级的watcher中，优先执行早到期的那个 而且pendings数组中同等优先级的watcher是按数组排列顺序的倒序执行的
+          //如果直接加入pendings数组，那么会造成早到期的晚执行，与预期不符
+          //所以先加入缓存数组，再在feed_reverse_done中倒序加入pendings数组，达到预期目的
           feed_reverse (EV_A_ (W)w);
         }
       while (timercnt && ANHE_at (timers [HEAP0]) < mn_now);
@@ -3528,6 +3561,7 @@ time_update (EV_P_ ev_tstamp max_block)
     {
       ev_rt_now = ev_time ();
 
+      //如果发现时间被人为调整，则需要更新定时器
       if (expect_false (mn_now > ev_rt_now || ev_rt_now > mn_now + max_block + MIN_TIMEJUMP))
         {
           /* adjust timers. this is easy, as the offset is the same for all of them */
@@ -3588,6 +3622,7 @@ ev_run (EV_P_ int flags)
         }
 #endif
 
+      //这里可以加打印来测试loop_done的值
       if (expect_false (loop_done))
         break;
 
@@ -3597,6 +3632,12 @@ ev_run (EV_P_ int flags)
 
       /* update fd-related kernel structures */
       fd_reify (EV_A);
+
+	  /*
+			  计算需要休眠的事件
+	  　	  #根据定时器 & 周期任务 & timeout_blocktime（超时事件收集间隔事件） & io_blocktime（io事件收集间隔事件）
+			  等信息计算此次循环需要sleep的时间
+	  */
 
       /* calculate blocking time */
       {
@@ -3618,6 +3659,8 @@ ev_run (EV_P_ int flags)
           {
             waittime = MAX_BLOCKTIME;
 
+            //如果发现等待时间大于定时器到期时间，那么更新它
+            //这一步是为了保证在定时器到期前从backend_poll中出来
             if (timercnt)
               {
                 ev_tstamp to = ANHE_at (timers [HEAP0]) - mn_now;
@@ -3633,11 +3676,13 @@ ev_run (EV_P_ int flags)
 #endif
 
             /* don't let timeouts decrease the waittime below timeout_blocktime */
+            //加打印判断timeout_blocktime的值
             if (expect_false (waittime < timeout_blocktime))
               waittime = timeout_blocktime;
 
             /* at this point, we NEED to wait, so we have to ensure */
             /* to pass a minimum nonzero value to the backend */
+            //backend_mintime是需要等待时间的超时秒数
             if (expect_false (waittime < backend_mintime))
               waittime = backend_mintime;
 
@@ -3843,20 +3888,32 @@ ev_io_start (EV_P_ ev_io *w) EV_THROW
   if (expect_false (ev_is_active (w)))
     return;
 
+  //assert应用了逗号运算符，括号内的表达式的结果是fd>=0，这样assert实际判断的也就是assert(fd>=0)
+  //加字符串是为了报错更加清晰易读
   assert (("libev: ev_io_start called with negative fd", fd >= 0));
+  //如果w->events不在EV_IOFDSET和EV_READ和EV_WRITE之间，则报错
+  //io监视器只关心这三个事件
   assert (("libev: ev_io_start called with illegal event mask", !(w->events & ~(EV__IOFDSET | EV_READ | EV_WRITE))));
 
   EV_FREQUENT_CHECK;
 
-//调整优先级，设置active为1，使activecnt+1
+  //调整优先级，设置active为1，使activecnt+1
+  //这里有ev_io*强转为ev_watcher*的操作
   ev_start (EV_A_ (W)w, 1);
+  //fd+1即为下一个要分配的数组位置，如果大于anfdmax的话，则需要扩容
+  //可以看出，anfds是以描述符为下标存储ANFD元素的
   array_needsize (ANFD, anfds, anfdmax, fd + 1, array_init_zero);
+  //头插法插入anfds[fd]的链表头，可以看出，每个anfds[fd]的head都是一个watcher链表
+  //这里有ev_io*强转为ev_watcher_list *的操作
   wlist_add (&anfds[fd].head, (WL)w);
 
   /* common bug, apparently */
+  //如果next指针指向了自己则报错,这里有一个强制转换的操作
   assert (("libev: ev_io_start called with corrupted watcher", ((WL)w)->next != (WL)w));
 
+  //为什么要w->events&EV__IOFDSET|EV_ANFD_REIFY
   fd_change (EV_A_ fd, w->events & EV__IOFDSET | EV_ANFD_REIFY);
+  //这步又是为什么？
   w->events &= ~EV__IOFDSET;
 
   EV_FREQUENT_CHECK;
@@ -3896,8 +3953,11 @@ ev_timer_start (EV_P_ ev_timer *w) EV_THROW
   ++timercnt;
   ev_start (EV_A_ (W)w, timercnt + HEAP0 - 1);
   array_needsize (ANHE, timers, timermax, ev_active (w) + 1, EMPTY2);
+  //可以看出，watcher->active是其在timers数组中的下标位置
+  //会扩展为(((loop)->timers) [((W)(w))->active]).w
   ANHE_w (timers [ev_active (w)]) = (WT)w;
   ANHE_at_cache (timers [ev_active (w)]);
+  //堆中新加入元素，向上调整
   upheap (timers, ev_active (w));
 
   EV_FREQUENT_CHECK;
