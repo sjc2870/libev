@@ -3928,7 +3928,7 @@ ev_io_start (EV_P_ ev_io *w) EV_THROW
   //EV_IOFDSET:0x80:1000 0000
   printf("before fd_change:anfds[fd].reify is %x\n",anfds[fd].reify);
   printf("w->events is 0x%04x,w->events&EV_IOFDSET is 0x%04x\n"
-    "w->events&EV__IOFDSET|EV_ANFD_REIFY is 0x%04x",w->events,w->events&EV__IOFDSET,w->events&EV__IOFDSET|EV_ANFD_REIFY);
+    "w->events&EV__IOFDSET|EV_ANFD_REIFY is 0x%04x\n",w->events,w->events&EV__IOFDSET,w->events&EV__IOFDSET|EV_ANFD_REIFY);
   fd_change (EV_A_ fd, w->events & EV__IOFDSET | EV_ANFD_REIFY);
   printf("after fd_change:anfds[fd].reify is %x\n",anfds[fd].reify);
   //消除EV_IOFDSET位，但这是为什么？
