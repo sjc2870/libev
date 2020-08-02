@@ -239,11 +239,15 @@ int inline_size
 epoll_init (EV_P_ int flags)
 {
 #ifdef EPOLL_CLOEXEC
+  printf("use epoll_create1:EPOLL_CLOEXEC\n");
   backend_fd = epoll_create1 (EPOLL_CLOEXEC);
 
   if (backend_fd < 0 && (errno == EINVAL || errno == ENOSYS))
 #endif
+  {
     backend_fd = epoll_create (256);
+    printf("not use epoll_create1:EPOLL_CLOEXEC\n");
+  }
 
   if (backend_fd < 0)
     return 0;

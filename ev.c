@@ -2150,7 +2150,9 @@ fd_change (EV_P_ int fd, int flags)
     {
       //fdchangecnt代表anfds的实际使用大小，fdchangmax代表当前anfds的最大长度
       ++fdchangecnt;
+      printf("before array_needsize:fdchangemax is %d\n",fdchangemax);
       array_needsize (int, fdchanges, fdchangemax, fdchangecnt, EMPTY2);
+      printf("after array_needsize:fdchangemax is %d\n",fdchangemax);
       fdchanges [fdchangecnt - 1] = fd;
     }
 }
@@ -2765,6 +2767,7 @@ unsigned int ecb_cold
 ev_recommended_backends (void) EV_THROW
 {
   unsigned int flags = ev_supported_backends ();
+  printf("ev_supported_backends are %x\n",flags);
 
 #ifndef __NetBSD__
   /* kqueue is borked on everything but netbsd apparently */
@@ -2920,6 +2923,7 @@ loop_init (EV_P_ unsigned int flags) EV_THROW
 
       if (!(flags & EVBACKEND_MASK))
         flags |= ev_recommended_backends ();
+      printf("ev_recommended_backends are %x\n",flags);
 
 #if EV_USE_IOCP
       if (!backend && (flags & EVBACKEND_IOCP  )) backend = iocp_init   (EV_A_ flags);
@@ -3902,7 +3906,9 @@ ev_io_start (EV_P_ ev_io *w) EV_THROW
   ev_start (EV_A_ (W)w, 1);
   //fd+1即为下一个要分配的数组位置，如果大于anfdmax的话，则需要扩容
   //可以看出，anfds是以描述符为下标存储ANFD元素的
+  printf("before array_needsize:anfdmax is %d\n",anfdmax);
   array_needsize (ANFD, anfds, anfdmax, fd + 1, array_init_zero);
+  printf("after array_needsize:anfdmax is %d\n",anfdmax);
   //头插法插入anfds[fd]的链表头，可以看出，每个anfds[fd]的head都是一个watcher链表
   //这里有ev_io*强转为ev_watcher_list *的操作
   wlist_add (&anfds[fd].head, (WL)w);
@@ -3913,8 +3919,10 @@ ev_io_start (EV_P_ ev_io *w) EV_THROW
 
   //为什么要w->events&EV__IOFDSET|EV_ANFD_REIFY
   //EV_IOFDSET:0x80:1000 0000
+  printf("before fd_change:anfds[fd].reify is %x\n",anfds[fd].reify);
   fd_change (EV_A_ fd, w->events & EV__IOFDSET | EV_ANFD_REIFY);
-  //这步又是为什么？
+  printf("after fd_change:anfds[fd].reify is %x\n",anfds[fd].reify);
+  //消除EV_IOFDSET位，但这是为什么？
   w->events &= ~EV__IOFDSET;
 
   EV_FREQUENT_CHECK;
