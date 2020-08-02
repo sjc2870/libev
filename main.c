@@ -40,6 +40,7 @@ main (void)
   // initialise an io watcher, then start it
   // this one will watch for stdin to become readable
   ev_io_init (&stdin_watcher, stdin_cb, /*STDIN_FILENO*/ 0, EV_READ);
+  printf("stdin_watcher.fd is %d\n",stdin_watcher.fd);
   ev_io_start (loop, &stdin_watcher);
 
   // initialise a timer watcher, then start it
@@ -48,6 +49,7 @@ main (void)
   //ev_timer_start (loop, &timeout_watcher);
 
   // now wait for events to arrive
+  printf("ev_run begin\n");
   ev_run (loop, 0);
 
   // break was called, so exit
