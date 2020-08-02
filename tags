@@ -6,7 +6,18 @@
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 ABSPRI	ev.c	1543;"	d	file:
 ABSPRI	ev.c	1545;"	d	file:
+ACLOCAL	Makefile	/^ACLOCAL = ${SHELL} \/home\/sjc\/libev\/missing aclocal-1.14$/;"	m
+ACLOCAL_M4	Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
 ALL	ev++.h	/^    ALL = EVBREAK_ALL$/;"	e	enum:ev::how_t
+AMTAR	Makefile	/^AMTAR = $${TAR-tar}$/;"	m
+AM_DEFAULT_VERBOSITY	Makefile	/^AM_DEFAULT_VERBOSITY = 1$/;"	m
+AM_RECURSIVE_TARGETS	Makefile	/^AM_RECURSIVE_TARGETS = cscope$/;"	m
+AM_V_CC	Makefile	/^AM_V_CC = $(am__v_CC_$(V))$/;"	m
+AM_V_CCLD	Makefile	/^AM_V_CCLD = $(am__v_CCLD_$(V))$/;"	m
+AM_V_GEN	Makefile	/^AM_V_GEN = $(am__v_GEN_$(V))$/;"	m
+AM_V_P	Makefile	/^AM_V_P = $(am__v_P_$(V))$/;"	m
+AM_V_at	Makefile	/^AM_V_at = $(am__v_at_$(V))$/;"	m
+AM_V_lt	Makefile	/^AM_V_lt = $(am__v_lt_$(V))$/;"	m
 ANFD	ev.c	/^} ANFD;$/;"	t	typeref:struct:__anon5	file:
 ANFS	ev.c	/^} ANFS;$/;"	t	typeref:struct:__anon7	file:
 ANHE	ev.c	/^  typedef WT ANHE;$/;"	t	file:
@@ -19,14 +30,45 @@ ANHE_w	ev.c	1805;"	d	file:
 ANHE_w	ev.c	1812;"	d	file:
 ANPENDING	ev.c	/^} ANPENDING;$/;"	t	typeref:struct:__anon6	file:
 ANSIG	ev.c	/^} ANSIG;$/;"	t	typeref:struct:__anon9	file:
+AR	Makefile	/^AR = ar$/;"	m
 ASYNC	ev++.h	/^    ASYNC    = EV_ASYNC,$/;"	e	enum:ev::__anon2
 AUTO	ev++.h	/^    AUTO      = EVFLAG_AUTO,$/;"	e	enum:ev::__anon3
+AUTOCONF	Makefile	/^AUTOCONF = ${SHELL} \/home\/sjc\/libev\/missing autoconf$/;"	m
+AUTOHEADER	Makefile	/^AUTOHEADER = ${SHELL} \/home\/sjc\/libev\/missing autoheader$/;"	m
+AUTOMAKE	Makefile	/^AUTOMAKE = ${SHELL} \/home\/sjc\/libev\/missing automake-1.14$/;"	m
+AUTOMAKE_OPTIONS	Makefile	/^AUTOMAKE_OPTIONS = foreign$/;"	m
+AWK	Makefile	/^AWK = mawk$/;"	m
+CC	Makefile	/^CC = gcc$/;"	m
+CCDEPMODE	Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CCLD	Makefile	/^CCLD = $(CC)$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -g -O3$/;"	m
 CHECK	ev++.h	/^    CHECK    = EV_CHECK,$/;"	e	enum:ev::__anon2
 CHILD	ev++.h	/^    CHILD    = EV_CHILD,$/;"	e	enum:ev::__anon2
+COMPILE	Makefile	/^COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \\$/;"	m
+CONFIG_CLEAN_FILES	Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_VPATH_FILES	Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
+CONFIG_HEADER	Makefile	/^CONFIG_HEADER = config.h$/;"	m
+CPP	Makefile	/^CPP = gcc -E$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS = $/;"	m
+CSCOPE	Makefile	/^CSCOPE = cscope$/;"	m
+CTAGS	Makefile	/^CTAGS = ctags$/;"	m
+CYGPATH_W	Makefile	/^CYGPATH_W = echo$/;"	m
+CreateProcess	libtool	/^   CreateProcess().  We must quote the arguments since Win32 CreateProcess()$/;"	f
 CreateProcess	ltmain.sh	/^   CreateProcess().  We must quote the arguments since Win32 CreateProcess()$/;"	f
-DEF_STAT_INTERVAL	ev.c	4275;"	d	file:
+DEFAULT_INCLUDES	Makefile	/^DEFAULT_INCLUDES = -I.$/;"	m
+DEFS	Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
+DEF_STAT_INTERVAL	ev.c	4287;"	d	file:
+DEPDIR	Makefile	/^DEPDIR = .deps$/;"	m
 DEVPOLL	ev++.h	/^    DEVPOLL   = EVBACKEND_DEVPOLL,$/;"	e	enum:ev::__anon3
-DHEAP	ev.c	2253;"	d	file:
+DHEAP	ev.c	2255;"	d	file:
+DISTFILES	Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DIST_ARCHIVES	Makefile	/^DIST_ARCHIVES = $(distdir).tar.gz$/;"	m
+DIST_COMMON	Makefile	/^DIST_COMMON = $(srcdir)\/Makefile.in $(srcdir)\/Makefile.am \\$/;"	m
+DIST_SOURCES	Makefile	/^DIST_SOURCES = $(libev_la_SOURCES)$/;"	m
+DIST_TARGETS	Makefile	/^DIST_TARGETS = dist-gzip$/;"	m
+DLLTOOL	Makefile	/^DLLTOOL = false$/;"	m
+DSYMUTIL	Makefile	/^DSYMUTIL = $/;"	m
+DUMPBIN	Makefile	/^DUMPBIN = $/;"	m
 ECB_AMD64	ev.c	579;"	d	file:
 ECB_AMD64_X32	ev.c	577;"	d	file:
 ECB_C	ev.c	614;"	d	file:
@@ -123,15 +165,20 @@ ECB_STRINGIFY	ev.c	818;"	d	file:
 ECB_STRINGIFY_	ev.c	817;"	d	file:
 ECB_STRINGIFY_EXPR	ev.c	819;"	d	file:
 ECB_VERSION	ev.c	537;"	d	file:
+ECHO_C	Makefile	/^ECHO_C = $/;"	m
+ECHO_N	Makefile	/^ECHO_N = -n$/;"	m
+ECHO_T	Makefile	/^ECHO_T = $/;"	m
 EFD_CLOEXEC	ev.c	440;"	d	file:
 EFD_CLOEXEC	ev.c	442;"	d	file:
 EFD_NONBLOCK	ev.c	436;"	d	file:
+EGREP	Makefile	/^EGREP = \/bin\/grep -E$/;"	m
 EMBED	ev++.h	/^    EMBED    = EV_EMBED,$/;"	e	enum:ev::__anon2
 EMPTY	ev.c	1548;"	d	file:
 EMPTY2	ev.c	1549;"	d	file:
 EPOLL	ev++.h	/^    EPOLL     = EVBACKEND_EPOLL,$/;"	e	enum:ev::__anon3
 ERROR	ev++.h	/^    ERROR    = EV_ERROR$/;"	e	enum:ev::__anon2
 ERROR	ev++.h	80;"	d
+ETAGS	Makefile	/^ETAGS = etags$/;"	m
 EVBACKEND_ALL	ev.h	/^  EVBACKEND_ALL     = 0x0000003FU, \/* all known backends *\/$/;"	e	enum:__anon12
 EVBACKEND_DEVPOLL	ev.h	/^  EVBACKEND_DEVPOLL = 0x00000010U, \/* solaris 8 *\/ \/* NYI *\/$/;"	e	enum:__anon12
 EVBACKEND_EPOLL	ev.h	/^  EVBACKEND_EPOLL   = 0x00000004U, \/* linux *\/$/;"	e	enum:__anon12
@@ -254,13 +301,13 @@ EV_IDLE	ev.h	/^  EV_IDLE     =      0x00002000, \/* event loop is idling *\/$/;"
 EV_IDLE_ENABLE	ev.h	109;"	d
 EV_INLINE	ev.h	195;"	d
 EV_INLINE	ev.h	197;"	d
-EV_INOTIFY_BUFSIZE	ev.c	4284;"	d	file:
+EV_INOTIFY_BUFSIZE	ev.c	4296;"	d	file:
 EV_INOTIFY_HASHSIZE	ev.c	331;"	d	file:
 EV_INVOKE_PENDING	ev.c	1846;"	d	file:
 EV_INVOKE_PENDING	ev.c	1850;"	d	file:
 EV_IO	ev.h	/^  EV_IO       =         EV_READ, \/* alias for type-detection *\/$/;"	e	enum:__anon10
-EV_LSTAT	ev.c	4517;"	d	file:
-EV_LSTAT	ev.c	4519;"	d	file:
+EV_LSTAT	ev.c	4529;"	d	file:
+EV_LSTAT	ev.c	4531;"	d	file:
 EV_MAXPRI	ev.h	85;"	d
 EV_MINPRI	ev.h	82;"	d
 EV_MULTIPLICITY	ev.h	89;"	d
@@ -417,60 +464,152 @@ EV_WRAP_H	ev_wrap.h	3;"	d
 EV_WRITE	ev.h	/^  EV_WRITE    =            0x02, \/* ev_io detected write will not block *\/$/;"	e	enum:__anon10
 EV_WRITE	event.h	103;"	d
 EV__IOFDSET	ev.h	/^  EV__IOFDSET =            0x80, \/* internal use only *\/$/;"	e	enum:__anon10
+EXEEXT	Makefile	/^EXEEXT = $/;"	m
+EXTRA_DIST	Makefile	/^EXTRA_DIST = LICENSE Changes libev.m4 autogen.sh \\$/;"	m
+FGREP	Makefile	/^FGREP = \/bin\/grep -F$/;"	m
 FORK	ev++.h	/^    FORK     = EV_FORK,$/;"	e	enum:ev::__anon2
 FORKCHECK	ev++.h	/^    FORKCHECK = EVFLAG_FORKCHECK,$/;"	e	enum:ev::__anon3
-HEAP0	ev.c	2254;"	d	file:
-HEAP0	ev.c	2304;"	d	file:
-HPARENT	ev.c	2255;"	d	file:
-HPARENT	ev.c	2305;"	d	file:
+GREP	Makefile	/^GREP = \/bin\/grep$/;"	m
+GZIP_ENV	Makefile	/^GZIP_ENV = --best$/;"	m
+HAVE_CLOCK_GETTIME	config.h	5;"	d
+HAVE_DLFCN_H	config.h	11;"	d
+HAVE_EPOLL_CTL	config.h	14;"	d
+HAVE_EVENTFD	config.h	17;"	d
+HAVE_FLOOR	config.h	20;"	d
+HAVE_INOTIFY_INIT	config.h	23;"	d
+HAVE_INTTYPES_H	config.h	26;"	d
+HAVE_MEMORY_H	config.h	35;"	d
+HAVE_NANOSLEEP	config.h	38;"	d
+HAVE_POLL	config.h	41;"	d
+HAVE_POLL_H	config.h	44;"	d
+HAVE_SELECT	config.h	53;"	d
+HAVE_SIGNALFD	config.h	56;"	d
+HAVE_STDINT_H	config.h	59;"	d
+HAVE_STDLIB_H	config.h	62;"	d
+HAVE_STRINGS_H	config.h	65;"	d
+HAVE_STRING_H	config.h	68;"	d
+HAVE_SYS_EPOLL_H	config.h	71;"	d
+HAVE_SYS_EVENTFD_H	config.h	74;"	d
+HAVE_SYS_INOTIFY_H	config.h	80;"	d
+HAVE_SYS_SELECT_H	config.h	83;"	d
+HAVE_SYS_SIGNALFD_H	config.h	86;"	d
+HAVE_SYS_STAT_H	config.h	89;"	d
+HAVE_SYS_TYPES_H	config.h	92;"	d
+HAVE_UNISTD_H	config.h	95;"	d
+HEADERS	Makefile	/^HEADERS = $(include_HEADERS)$/;"	m
+HEAP0	ev.c	2256;"	d	file:
+HEAP0	ev.c	2306;"	d	file:
+HPARENT	ev.c	2257;"	d	file:
+HPARENT	ev.c	2307;"	d	file:
 IDLE	ev++.h	/^    IDLE     = EV_IDLE,$/;"	e	enum:ev::__anon2
+INSTALL	Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL_DATA	Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_HEADER	Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_STRIP_PROGRAM	Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
 KQUEUE	ev++.h	/^    KQUEUE    = EVBACKEND_KQUEUE,$/;"	e	enum:ev::__anon3
+LD	Makefile	/^LD = \/usr\/bin\/ld -m elf_x86_64$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
+LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
+LIBS	Makefile	/^LIBS = -lm $/;"	m
+LIBTOOL	Makefile	/^LIBTOOL = $(SHELL) $(top_builddir)\/libtool$/;"	m
+LINK	Makefile	/^LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \\$/;"	m
+LIPO	Makefile	/^LIPO = $/;"	m
+LN_S	Makefile	/^LN_S = ln -s$/;"	m
+LTCOMPILE	Makefile	/^LTCOMPILE = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \\$/;"	m
+LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
+LTLIBRARIES	Makefile	/^LTLIBRARIES = $(lib_LTLIBRARIES)$/;"	m
+LT_OBJDIR	config.h	99;"	d
+MAINT	Makefile	/^MAINT = #$/;"	m
+MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/home\/sjc\/libev\/missing makeinfo$/;"	m
 MALLOC_ROUND	ev.c	1925;"	d	file:
+MANIFEST_TOOL	Makefile	/^MANIFEST_TOOL = :$/;"	m
+MANS	Makefile	/^MANS = $(man_MANS)$/;"	m
 MAX_BLOCKTIME	ev.c	486;"	d	file:
 MIN_INTERVAL	ev.c	482;"	d	file:
-MIN_STAT_INTERVAL	ev.c	4277;"	d	file:
+MIN_STAT_INTERVAL	ev.c	4289;"	d	file:
 MIN_TIMEJUMP	ev.c	485;"	d	file:
+MKDIR_P	Makefile	/^MKDIR_P = \/bin\/mkdir -p$/;"	m
 NFDBITS	ev_select.c	60;"	d	file:
 NFDBITS	ev_select.c	61;"	d	file:
 NFDBYTES	ev_select.c	65;"	d	file:
-NFS_STAT_INTERVAL	ev.c	4276;"	d	file:
+NFS_STAT_INTERVAL	ev.c	4288;"	d	file:
+NM	Makefile	/^NM = \/usr\/bin\/nm -B$/;"	m
+NMEDIT	Makefile	/^NMEDIT = $/;"	m
 NOENV	ev++.h	/^    NOENV     = EVFLAG_NOENV,$/;"	e	enum:ev::__anon3
 NONBLOCK	ev++.h	/^    NONBLOCK = EVLOOP_NONBLOCK,$/;"	e	enum:ev::__anon4
 NONE	ev++.h	/^    NONE     = EV_NONE,$/;"	e	enum:ev::__anon2
+NORMAL_INSTALL	Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_UNINSTALL	Makefile	/^NORMAL_UNINSTALL = :$/;"	m
 NOTE_EOF	ev_kqueue.c	60;"	d	file:
 NOWAIT	ev++.h	/^    NOWAIT   = EVRUN_NOWAIT,$/;"	e	enum:ev::__anon4
+NROFF	Makefile	/^NROFF = nroff$/;"	m
 NUMPRI	ev.c	1540;"	d	file:
+OBJDUMP	Makefile	/^OBJDUMP = objdump$/;"	m
+OBJEXT	Makefile	/^OBJEXT = o$/;"	m
 ONCE	ev++.h	/^    ONCE     = EVRUN_ONCE$/;"	e	enum:ev::__anon4
 ONE	ev++.h	/^    ONE = EVBREAK_ONE,$/;"	e	enum:ev::how_t
 ONESHOT	ev++.h	/^    ONESHOT  = EVLOOP_ONESHOT,$/;"	e	enum:ev::__anon4
+OTOOL	Makefile	/^OTOOL = $/;"	m
+OTOOL64	Makefile	/^OTOOL64 = $/;"	m
+PACKAGE	Makefile	/^PACKAGE = libev$/;"	m
+PACKAGE	config.h	102;"	d
+PACKAGE_BUGREPORT	Makefile	/^PACKAGE_BUGREPORT = $/;"	m
+PACKAGE_BUGREPORT	config.h	105;"	d
+PACKAGE_NAME	Makefile	/^PACKAGE_NAME = $/;"	m
+PACKAGE_NAME	config.h	108;"	d
+PACKAGE_STRING	Makefile	/^PACKAGE_STRING = $/;"	m
+PACKAGE_STRING	config.h	111;"	d
+PACKAGE_TARNAME	Makefile	/^PACKAGE_TARNAME = $/;"	m
+PACKAGE_TARNAME	config.h	114;"	d
+PACKAGE_URL	Makefile	/^PACKAGE_URL = $/;"	m
+PACKAGE_URL	config.h	117;"	d
+PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = $/;"	m
+PACKAGE_VERSION	config.h	120;"	d
+PATH_SEPARATOR	Makefile	/^PATH_SEPARATOR = :$/;"	m
 PERIODIC	ev++.h	/^    PERIODIC = EV_PERIODIC,$/;"	e	enum:ev::__anon2
 POLL	ev++.h	/^    POLL      = EVBACKEND_POLL,$/;"	e	enum:ev::__anon3
 PORT	ev++.h	/^    PORT      = EVBACKEND_PORT$/;"	e	enum:ev::__anon3
+POST_INSTALL	Makefile	/^POST_INSTALL = :$/;"	m
+POST_UNINSTALL	Makefile	/^POST_UNINSTALL = :$/;"	m
 PREPARE	ev++.h	/^    PREPARE  = EV_PREPARE,$/;"	e	enum:ev::__anon2
+PRE_INSTALL	Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_UNINSTALL	Makefile	/^PRE_UNINSTALL = :$/;"	m
+RANLIB	Makefile	/^RANLIB = ranlib$/;"	m
 READ	ev++.h	/^    READ     = EV_READ,$/;"	e	enum:ev::__anon2
-SA_RESTART	ev.c	4106;"	d	file:
+SA_RESTART	ev.c	4118;"	d	file:
+SED	Makefile	/^SED = \/bin\/sed$/;"	m
 SELECT	ev++.h	/^    SELECT    = EVBACKEND_SELECT,$/;"	e	enum:ev::__anon3
+SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
 SFD_CLOEXEC	ev.c	456;"	d	file:
 SFD_CLOEXEC	ev.c	458;"	d	file:
 SFD_NONBLOCK	ev.c	452;"	d	file:
+SHELL	Makefile	/^SHELL = \/bin\/bash$/;"	m
 SIGFPE_REQ	ev_win32.c	/^volatile double SIGFPE_REQ = 0.0f;$/;"	v
 SIGNAL	ev++.h	/^    SIGNAL   = EV_SIGNAL,$/;"	e	enum:ev::__anon2
+SOURCES	Makefile	/^SOURCES = $(libev_la_SOURCES)$/;"	m
 STAT	ev++.h	/^    STAT     = EV_STAT,$/;"	e	enum:ev::__anon2
+STDC_HEADERS	config.h	123;"	d
+STRIP	Makefile	/^STRIP = strip$/;"	m
 T	ev.c	/^  template<typename T, int N>$/;"	v
 TIMEOUT	ev++.h	/^    TIMEOUT  = EV_TIMEOUT,$/;"	e	enum:ev::__anon2
 TIMER	ev++.h	/^    TIMER    = EV_TIMER,$/;"	e	enum:ev::__anon2
 UNDEF	ev++.h	/^    UNDEF    = EV_UNDEF,$/;"	e	enum:ev::__anon2
-UPHEAP_DONE	ev.c	2256;"	d	file:
-UPHEAP_DONE	ev.c	2306;"	d	file:
+UPHEAP_DONE	ev.c	2258;"	d	file:
+UPHEAP_DONE	ev.c	2308;"	d	file:
 VAR	ev.c	1823;"	d	file:
 VAR	ev.c	1825;"	d	file:
 VAR	ev.c	1835;"	d	file:
 VAR	ev.c	1837;"	d	file:
 VARx	ev_vars.h	205;"	d
 VARx	ev_vars.h	40;"	d
+VERSION	Makefile	/^VERSION = 4.22$/;"	m
+VERSION	config.h	126;"	d
+VERSION_INFO	Makefile	/^VERSION_INFO = 4:0:0$/;"	m
 W	ev.c	/^typedef ev_watcher *W;$/;"	t	file:
-WCONTINUED	ev.c	2678;"	d	file:
-WIFCONTINUED	ev.c	2654;"	d	file:
+WCONTINUED	ev.c	2680;"	d	file:
+WIFCONTINUED	ev.c	2656;"	d	file:
 WIN32_LEAN_AND_MEAN	ev.c	205;"	d	file:
 WL	ev.c	/^typedef ev_watcher_list *WL;$/;"	t	file:
 WRITE	ev++.h	/^    WRITE    = EV_WRITE,$/;"	e	enum:ev::__anon2
@@ -480,6 +619,13 @@ _EVENT_LOG_DEBUG	event.h	141;"	d
 _EVENT_LOG_ERR	event.h	144;"	d
 _EVENT_LOG_MSG	event.h	142;"	d
 _EVENT_LOG_WARN	event.h	143;"	d
+abs_builddir	Makefile	/^abs_builddir = \/home\/sjc\/libev$/;"	m
+abs_srcdir	Makefile	/^abs_srcdir = \/home\/sjc\/libev$/;"	m
+abs_top_builddir	Makefile	/^abs_top_builddir = \/home\/sjc\/libev$/;"	m
+abs_top_srcdir	Makefile	/^abs_top_srcdir = \/home\/sjc\/libev$/;"	m
+ac_ct_AR	Makefile	/^ac_ct_AR = ar$/;"	m
+ac_ct_CC	Makefile	/^ac_ct_CC = gcc$/;"	m
+ac_ct_DUMPBIN	Makefile	/^ac_ct_DUMPBIN = $/;"	m
 ac_fn_c_check_func	configure	/^ac_fn_c_check_func ()$/;"	f
 ac_fn_c_check_header_compile	configure	/^ac_fn_c_check_header_compile ()$/;"	f
 ac_fn_c_check_header_mongrel	configure	/^ac_fn_c_check_header_mongrel ()$/;"	f
@@ -494,6 +640,57 @@ activecnt	ev_wrap.h	5;"	d
 adjustheap	ev.c	/^adjustheap (ANHE *heap, int N, int k)$/;"	f
 again	ev++.h	/^    void again () throw ()$/;"	f	namespace:ev
 aix_post_process_depfile	depcomp	/^aix_post_process_depfile ()$/;"	f
+am__CONFIG_DISTCLEAN_FILES	Makefile	/^am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \\$/;"	m
+am__aclocal_m4_deps	Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/libev.m4 \\$/;"	m
+am__base_list	Makefile	/^am__base_list = \\$/;"	m
+am__can_run_installinfo	Makefile	/^am__can_run_installinfo = \\$/;"	m
+am__cd	Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__configure_deps	Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__define_uniq_tagged_files	Makefile	/^am__define_uniq_tagged_files = \\$/;"	m
+am__depfiles_maybe	Makefile	/^am__depfiles_maybe = depfiles$/;"	m
+am__distuninstallcheck_listfiles	Makefile	/^am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \\$/;"	m
+am__include	Makefile	/^am__include = include$/;"	m
+am__install_max	Makefile	/^am__install_max = 40$/;"	m
+am__installdirs	Makefile	/^am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(man3dir)" \\$/;"	m
+am__is_gnu_make	Makefile	/^am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'$/;"	m
+am__leading_dot	Makefile	/^am__leading_dot = .$/;"	m
+am__make_dryrun	Makefile	/^am__make_dryrun = (target_option=n; $(am__make_running_with_option))$/;"	m
+am__make_keepgoing	Makefile	/^am__make_keepgoing = (target_option=k; $(am__make_running_with_option))$/;"	m
+am__make_running_with_option	Makefile	/^am__make_running_with_option = \\$/;"	m
+am__mv	Makefile	/^am__mv = mv -f$/;"	m
+am__nobase_list	Makefile	/^am__nobase_list = $(am__nobase_strip_setup); \\$/;"	m
+am__nobase_strip	Makefile	/^am__nobase_strip = \\$/;"	m
+am__nobase_strip_setup	Makefile	/^am__nobase_strip_setup = \\$/;"	m
+am__post_remove_distdir	Makefile	/^am__post_remove_distdir = $(am__remove_distdir)$/;"	m
+am__quote	Makefile	/^am__quote = $/;"	m
+am__remove_distdir	Makefile	/^am__remove_distdir = \\$/;"	m
+am__strip_dir	Makefile	/^am__strip_dir = f=`echo $$p | sed -e 's|^.*\/||'`;$/;"	m
+am__tagged_files	Makefile	/^am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \\$/;"	m
+am__tar	Makefile	/^am__tar = $${TAR-tar} chof - "$$tardir"$/;"	m
+am__uninstall_files_from_dir	Makefile	/^am__uninstall_files_from_dir = { \\$/;"	m
+am__uniquify_input	Makefile	/^am__uniquify_input = $(AWK) '\\$/;"	m
+am__untar	Makefile	/^am__untar = $${TAR-tar} xf -$/;"	m
+am__v_CCLD_	Makefile	/^am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_CCLD_0	Makefile	/^am__v_CCLD_0 = @echo "  CCLD    " $@;$/;"	m
+am__v_CCLD_1	Makefile	/^am__v_CCLD_1 = $/;"	m
+am__v_CC_	Makefile	/^am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_CC_0	Makefile	/^am__v_CC_0 = @echo "  CC      " $@;$/;"	m
+am__v_CC_1	Makefile	/^am__v_CC_1 = $/;"	m
+am__v_GEN_	Makefile	/^am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_GEN_0	Makefile	/^am__v_GEN_0 = @echo "  GEN     " $@;$/;"	m
+am__v_GEN_1	Makefile	/^am__v_GEN_1 = $/;"	m
+am__v_P_	Makefile	/^am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_P_0	Makefile	/^am__v_P_0 = false$/;"	m
+am__v_P_1	Makefile	/^am__v_P_1 = :$/;"	m
+am__v_at_	Makefile	/^am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_at_0	Makefile	/^am__v_at_0 = @$/;"	m
+am__v_at_1	Makefile	/^am__v_at_1 = $/;"	m
+am__v_lt_	Makefile	/^am__v_lt_ = $(am__v_lt_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_lt_0	Makefile	/^am__v_lt_0 = --silent$/;"	m
+am__v_lt_1	Makefile	/^am__v_lt_1 = $/;"	m
+am__vpath_adj	Makefile	/^am__vpath_adj = case $$p in \\$/;"	m
+am__vpath_adj_setup	Makefile	/^am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;$/;"	m
+am_libev_la_OBJECTS	Makefile	/^am_libev_la_OBJECTS = ev.lo event.lo$/;"	m
 anfdmax	ev_wrap.h	105;"	d
 anfdmax	ev_wrap.h	6;"	d
 anfds	ev_wrap.h	106;"	d
@@ -506,17 +703,25 @@ array_needsize	ev.c	1970;"	d	file:
 array_nextsize	ev.c	/^array_nextsize (int elem, int cur, int cnt)$/;"	f
 array_realloc	ev.c	/^array_realloc (int elem, void *base, int *cur, int cnt)$/;"	f	file:
 array_verify	ev.c	/^array_verify (EV_P_ W *ws, int cnt)$/;"	f	file:
+as_fn_append	config.status	/^  as_fn_append ()$/;"	f
 as_fn_append	configure	/^  as_fn_append ()$/;"	f
+as_fn_arith	config.status	/^  as_fn_arith ()$/;"	f
 as_fn_arith	configure	/^  as_fn_arith ()$/;"	f
+as_fn_error	config.status	/^as_fn_error ()$/;"	f
 as_fn_error	configure	/^as_fn_error ()$/;"	f
+as_fn_executable_p	config.status	/^as_fn_executable_p ()$/;"	f
 as_fn_executable_p	configure	/^as_fn_executable_p ()$/;"	f
+as_fn_exit	config.status	/^as_fn_exit ()$/;"	f
 as_fn_exit	configure	/^as_fn_exit ()$/;"	f
 as_fn_failure	configure	/^as_fn_failure () { as_fn_return 1; }$/;"	f
+as_fn_mkdir_p	config.status	/^as_fn_mkdir_p ()$/;"	f
 as_fn_mkdir_p	configure	/^as_fn_mkdir_p ()$/;"	f
 as_fn_ret_failure	configure	/^as_fn_ret_failure () { return 1; }$/;"	f
 as_fn_ret_success	configure	/^as_fn_ret_success () { return 0; }$/;"	f
+as_fn_set_status	config.status	/^as_fn_set_status ()$/;"	f
 as_fn_set_status	configure	/^as_fn_set_status ()$/;"	f
 as_fn_success	configure	/^as_fn_success () { as_fn_return 0; }$/;"	f
+as_fn_unset	config.status	/^as_fn_unset ()$/;"	f
 as_fn_unset	configure	/^as_fn_unset ()$/;"	f
 async	ev.h	/^  struct ev_async async;$/;"	m	union:ev_any_watcher	typeref:struct:ev_any_watcher::ev_async
 async_pending	ev++.h	/^    bool async_pending () throw ()$/;"	f	namespace:ev
@@ -545,7 +750,15 @@ bad_loop	ev++.h	/^    bad_loop ()$/;"	f	struct:ev::bad_loop
 bad_loop	ev++.h	/^  struct bad_loop$/;"	s	namespace:ev
 base	ev++.h	/^    base (EV_PX) throw ()$/;"	f	struct:ev::base
 base	ev++.h	/^  struct base : ev_watcher$/;"	s	namespace:ev
+bindir	Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
 break_loop	ev++.h	/^    void break_loop (how_t how = ONE) throw ()$/;"	f	struct:ev::loop_ref
+build	Makefile	/^build = x86_64-unknown-linux-gnu$/;"	m
+build_alias	Makefile	/^build_alias = $/;"	m
+build_cpu	Makefile	/^build_cpu = x86_64$/;"	m
+build_os	Makefile	/^build_os = linux-gnu$/;"	m
+build_triplet	Makefile	/^build_triplet = x86_64-unknown-linux-gnu$/;"	m
+build_vendor	Makefile	/^build_vendor = unknown$/;"	m
+builddir	Makefile	/^builddir = .$/;"	m
 cb	ev.c	/^  void (*cb)(int revents, void *arg);$/;"	m	struct:ev_once	file:
 cb	event.c	/^  void (*cb)(int, short, void *);$/;"	m	struct:ev_x_once	file:
 check	ev.h	/^  ev_check check;        \/* unused *\/$/;"	m	struct:ev_embed
@@ -577,13 +790,21 @@ dLOOPbase	event.c	52;"	d	file:
 dLOOPbase	event.c	55;"	d	file:
 dLOOPev	event.c	51;"	d	file:
 dLOOPev	event.c	54;"	d	file:
+datadir	Makefile	/^datadir = ${datarootdir}$/;"	m
+datarootdir	Makefile	/^datarootdir = ${prefix}\/share$/;"	m
 default_loop	ev++.h	/^    default_loop (unsigned int flags = AUTO) throw (bad_loop)$/;"	f	struct:ev::default_loop
 default_loop	ev++.h	/^  struct default_loop : loop_ref$/;"	s	namespace:ev
 default_loop_struct	ev.c	/^  static struct ev_loop default_loop_struct;$/;"	v	typeref:struct:ev_loop	file:
 delay	ev++.h	/^  inline void delay (tstamp interval) throw ()$/;"	f	namespace:ev
+depcomp	Makefile	/^depcomp = $(SHELL) $(top_srcdir)\/depcomp$/;"	m
 depth	ev++.h	/^    unsigned int depth () const throw ()$/;"	f	struct:ev::loop_ref
+distcleancheck_listfiles	Makefile	/^distcleancheck_listfiles = find . -type f -print$/;"	m
+distdir	Makefile	/^distdir = $(PACKAGE)-$(VERSION)$/;"	m
+distuninstallcheck_listfiles	Makefile	/^distuninstallcheck_listfiles = find . -type f -print$/;"	m
+docdir	Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE}$/;"	m
 downheap	ev.c	/^downheap (ANHE *heap, int N, int k)$/;"	f
 dummy	event.c	/^  int dummy;$/;"	m	struct:event_base	file:
+dvidir	Makefile	/^dvidir = ${docdir}$/;"	m
 dynamic_loop	ev++.h	/^    dynamic_loop (unsigned int flags = AUTO) throw (bad_loop)$/;"	f	struct:ev::dynamic_loop
 dynamic_loop	ev++.h	/^  struct dynamic_loop : loop_ref$/;"	s	namespace:ev
 ecb_array_length	ev.c	1199;"	d	file:
@@ -899,6 +1120,7 @@ evtimer_del	event.h	114;"	d
 evtimer_initialized	event.h	116;"	d
 evtimer_pending	event.h	115;"	d
 evtimer_set	event.h	113;"	d
+exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
 expect_false	ev.c	1528;"	d	file:
 expect_true	ev.c	1529;"	d	file:
 fd	ev.h	/^  int fd;     \/* ro *\/$/;"	m	struct:ev_io
@@ -941,121 +1163,231 @@ fs_hash	ev_wrap.h	137;"	d
 fs_hash	ev_wrap.h	38;"	d
 fs_w	ev_wrap.h	138;"	d
 fs_w	ev_wrap.h	39;"	d
+func_append	config.status	/^func_append ()\\$/;"	f
 func_append	configure	/^func_append ()\\$/;"	f
+func_append	libtool	/^func_append ()$/;"	f
 func_append	ltmain.sh	/^func_append ()$/;"	f
+func_append_quoted	config.status	/^func_append_quoted ()\\$/;"	f
 func_append_quoted	configure	/^func_append_quoted ()\\$/;"	f
+func_append_quoted	libtool	/^func_append_quoted ()$/;"	f
 func_append_quoted	ltmain.sh	/^func_append_quoted ()$/;"	f
+func_arith	config.status	/^func_arith ()\\$/;"	f
 func_arith	configure	/^func_arith ()\\$/;"	f
+func_arith	libtool	/^func_arith ()$/;"	f
 func_arith	ltmain.sh	/^func_arith ()$/;"	f
+func_basename	config.status	/^func_basename ()\\$/;"	f
 func_basename	configure	/^func_basename ()\\$/;"	f
+func_basename	libtool	/^func_basename ()$/;"	f
 func_basename	ltmain.sh	/^func_basename ()$/;"	f
+func_check_version_match	libtool	/^func_check_version_match ()$/;"	f
 func_check_version_match	ltmain.sh	/^func_check_version_match ()$/;"	f
 func_cl_dashL	compile	/^func_cl_dashL ()$/;"	f
 func_cl_dashl	compile	/^func_cl_dashl ()$/;"	f
 func_cl_wrapper	compile	/^func_cl_wrapper ()$/;"	f
+func_config	libtool	/^func_config ()$/;"	f
 func_config	ltmain.sh	/^func_config ()$/;"	f
+func_convert_core_file_wine_to_w32	libtool	/^func_convert_core_file_wine_to_w32 ()$/;"	f
 func_convert_core_file_wine_to_w32	ltmain.sh	/^func_convert_core_file_wine_to_w32 ()$/;"	f
+func_convert_core_msys_to_w32	libtool	/^func_convert_core_msys_to_w32 ()$/;"	f
 func_convert_core_msys_to_w32	ltmain.sh	/^func_convert_core_msys_to_w32 ()$/;"	f
+func_convert_core_path_wine_to_w32	libtool	/^func_convert_core_path_wine_to_w32 ()$/;"	f
 func_convert_core_path_wine_to_w32	ltmain.sh	/^func_convert_core_path_wine_to_w32 ()$/;"	f
+func_convert_file_check	libtool	/^func_convert_file_check ()$/;"	f
 func_convert_file_check	ltmain.sh	/^func_convert_file_check ()$/;"	f
+func_convert_file_cygwin_to_w32	libtool	/^func_convert_file_cygwin_to_w32 ()$/;"	f
 func_convert_file_cygwin_to_w32	ltmain.sh	/^func_convert_file_cygwin_to_w32 ()$/;"	f
+func_convert_file_msys_to_cygwin	libtool	/^func_convert_file_msys_to_cygwin ()$/;"	f
 func_convert_file_msys_to_cygwin	ltmain.sh	/^func_convert_file_msys_to_cygwin ()$/;"	f
+func_convert_file_msys_to_w32	libtool	/^func_convert_file_msys_to_w32 ()$/;"	f
 func_convert_file_msys_to_w32	ltmain.sh	/^func_convert_file_msys_to_w32 ()$/;"	f
+func_convert_file_nix_to_cygwin	libtool	/^func_convert_file_nix_to_cygwin ()$/;"	f
 func_convert_file_nix_to_cygwin	ltmain.sh	/^func_convert_file_nix_to_cygwin ()$/;"	f
+func_convert_file_nix_to_w32	libtool	/^func_convert_file_nix_to_w32 ()$/;"	f
 func_convert_file_nix_to_w32	ltmain.sh	/^func_convert_file_nix_to_w32 ()$/;"	f
+func_convert_file_noop	libtool	/^func_convert_file_noop ()$/;"	f
 func_convert_file_noop	ltmain.sh	/^func_convert_file_noop ()$/;"	f
+func_convert_path_check	libtool	/^func_convert_path_check ()$/;"	f
 func_convert_path_check	ltmain.sh	/^func_convert_path_check ()$/;"	f
+func_convert_path_cygwin_to_w32	libtool	/^func_convert_path_cygwin_to_w32 ()$/;"	f
 func_convert_path_cygwin_to_w32	ltmain.sh	/^func_convert_path_cygwin_to_w32 ()$/;"	f
+func_convert_path_front_back_pathsep	libtool	/^func_convert_path_front_back_pathsep ()$/;"	f
 func_convert_path_front_back_pathsep	ltmain.sh	/^func_convert_path_front_back_pathsep ()$/;"	f
+func_convert_path_msys_to_cygwin	libtool	/^func_convert_path_msys_to_cygwin ()$/;"	f
 func_convert_path_msys_to_cygwin	ltmain.sh	/^func_convert_path_msys_to_cygwin ()$/;"	f
+func_convert_path_msys_to_w32	libtool	/^func_convert_path_msys_to_w32 ()$/;"	f
 func_convert_path_msys_to_w32	ltmain.sh	/^func_convert_path_msys_to_w32 ()$/;"	f
+func_convert_path_nix_to_cygwin	libtool	/^func_convert_path_nix_to_cygwin ()$/;"	f
 func_convert_path_nix_to_cygwin	ltmain.sh	/^func_convert_path_nix_to_cygwin ()$/;"	f
+func_convert_path_nix_to_w32	libtool	/^func_convert_path_nix_to_w32 ()$/;"	f
 func_convert_path_nix_to_w32	ltmain.sh	/^func_convert_path_nix_to_w32 ()$/;"	f
+func_convert_path_noop	libtool	/^func_convert_path_noop ()$/;"	f
 func_convert_path_noop	ltmain.sh	/^func_convert_path_noop ()$/;"	f
+func_cygming_dll_for_implib	libtool	/^func_cygming_dll_for_implib ()$/;"	f
 func_cygming_dll_for_implib	ltmain.sh	/^func_cygming_dll_for_implib ()$/;"	f
+func_cygming_dll_for_implib_fallback	libtool	/^func_cygming_dll_for_implib_fallback ()$/;"	f
 func_cygming_dll_for_implib_fallback	ltmain.sh	/^func_cygming_dll_for_implib_fallback ()$/;"	f
+func_cygming_dll_for_implib_fallback_core	libtool	/^func_cygming_dll_for_implib_fallback_core ()$/;"	f
 func_cygming_dll_for_implib_fallback_core	ltmain.sh	/^func_cygming_dll_for_implib_fallback_core ()$/;"	f
+func_cygming_gnu_implib_p	libtool	/^func_cygming_gnu_implib_p ()$/;"	f
 func_cygming_gnu_implib_p	ltmain.sh	/^func_cygming_gnu_implib_p ()$/;"	f
+func_cygming_ms_implib_p	libtool	/^func_cygming_ms_implib_p ()$/;"	f
 func_cygming_ms_implib_p	ltmain.sh	/^func_cygming_ms_implib_p ()$/;"	f
+func_cygpath	libtool	/^func_cygpath ()$/;"	f
 func_cygpath	ltmain.sh	/^func_cygpath ()$/;"	f
+func_dirname	config.status	/^func_dirname ()\\$/;"	f
 func_dirname	configure	/^func_dirname ()\\$/;"	f
+func_dirname	libtool	/^func_dirname ()$/;"	f
 func_dirname	ltmain.sh	/^func_dirname ()$/;"	f
+func_dirname_and_basename	config.status	/^func_dirname_and_basename ()\\$/;"	f
 func_dirname_and_basename	configure	/^func_dirname_and_basename ()\\$/;"	f
+func_dirname_and_basename	libtool	/^func_dirname_and_basename ()$/;"	f
 func_dirname_and_basename	ltmain.sh	/^func_dirname_and_basename ()$/;"	f
+func_echo	libtool	/^func_echo ()$/;"	f
 func_echo	ltmain.sh	/^func_echo ()$/;"	f
 func_echo_all	configure	/^func_echo_all ()$/;"	f
+func_echo_all	libtool	/^func_echo_all ()$/;"	f
 func_echo_all	ltmain.sh	/^func_echo_all ()$/;"	f
+func_emit_cwrapperexe_src	libtool	/^func_emit_cwrapperexe_src ()$/;"	f
 func_emit_cwrapperexe_src	ltmain.sh	/^func_emit_cwrapperexe_src ()$/;"	f
+func_emit_wrapper	libtool	/^func_emit_wrapper ()$/;"	f
 func_emit_wrapper	ltmain.sh	/^func_emit_wrapper ()$/;"	f
+func_enable_tag	libtool	/^func_enable_tag ()$/;"	f
 func_enable_tag	ltmain.sh	/^func_enable_tag ()$/;"	f
+func_error	libtool	/^func_error ()$/;"	f
 func_error	ltmain.sh	/^func_error ()$/;"	f
+func_exec_program	libtool	/^func_exec_program ()$/;"	f
 func_exec_program	ltmain.sh	/^func_exec_program ()$/;"	f
+func_exec_program_core	libtool	/^func_exec_program_core ()$/;"	f
 func_exec_program_core	ltmain.sh	/^func_exec_program_core ()$/;"	f
+func_execute_cmds	libtool	/^func_execute_cmds ()$/;"	f
 func_execute_cmds	ltmain.sh	/^func_execute_cmds ()$/;"	f
+func_extract_an_archive	libtool	/^func_extract_an_archive ()$/;"	f
 func_extract_an_archive	ltmain.sh	/^func_extract_an_archive ()$/;"	f
+func_extract_archives	libtool	/^func_extract_archives ()$/;"	f
 func_extract_archives	ltmain.sh	/^func_extract_archives ()$/;"	f
+func_fallback_echo	config.status	/^func_fallback_echo ()$/;"	f
 func_fallback_echo	configure	/^  func_fallback_echo ()$/;"	f
 func_fallback_echo	configure	/^func_fallback_echo ()$/;"	f
+func_fallback_echo	libtool	/^func_fallback_echo ()$/;"	f
 func_fallback_echo	ltmain.sh	/^func_fallback_echo ()$/;"	f
+func_fatal_configuration	libtool	/^func_fatal_configuration ()$/;"	f
 func_fatal_configuration	ltmain.sh	/^func_fatal_configuration ()$/;"	f
+func_fatal_error	libtool	/^func_fatal_error ()$/;"	f
 func_fatal_error	ltmain.sh	/^func_fatal_error ()$/;"	f
+func_fatal_help	libtool	/^func_fatal_help ()$/;"	f
 func_fatal_help	ltmain.sh	/^func_fatal_help ()$/;"	f
+func_features	libtool	/^func_features ()$/;"	f
 func_features	ltmain.sh	/^func_features ()$/;"	f
 func_file_conv	compile	/^func_file_conv ()$/;"	f
+func_generate_dlsyms	libtool	/^func_generate_dlsyms ()$/;"	f
 func_generate_dlsyms	ltmain.sh	/^func_generate_dlsyms ()$/;"	f
+func_grep	libtool	/^func_grep ()$/;"	f
 func_grep	ltmain.sh	/^func_grep ()$/;"	f
+func_help	libtool	/^func_help ()$/;"	f
 func_help	ltmain.sh	/^func_help ()$/;"	f
+func_infer_tag	libtool	/^func_infer_tag ()$/;"	f
 func_infer_tag	ltmain.sh	/^func_infer_tag ()$/;"	f
+func_init_to_host_path_cmd	libtool	/^func_init_to_host_path_cmd ()$/;"	f
 func_init_to_host_path_cmd	ltmain.sh	/^func_init_to_host_path_cmd ()$/;"	f
+func_lalib_p	libtool	/^func_lalib_p ()$/;"	f
 func_lalib_p	ltmain.sh	/^func_lalib_p ()$/;"	f
+func_lalib_unsafe_p	libtool	/^func_lalib_unsafe_p ()$/;"	f
 func_lalib_unsafe_p	ltmain.sh	/^func_lalib_unsafe_p ()$/;"	f
+func_len	config.status	/^func_len ()\\$/;"	f
 func_len	configure	/^func_len ()\\$/;"	f
+func_len	libtool	/^func_len ()$/;"	f
 func_len	ltmain.sh	/^func_len ()$/;"	f
+func_lo2o	config.status	/^func_lo2o ()\\$/;"	f
 func_lo2o	configure	/^func_lo2o ()\\$/;"	f
+func_lo2o	libtool	/^func_lo2o ()$/;"	f
 func_lo2o	ltmain.sh	/^func_lo2o ()$/;"	f
+func_lt_dump_args	libtool	/^func_lt_dump_args ()$/;"	f
 func_lt_dump_args	ltmain.sh	/^func_lt_dump_args ()$/;"	f
+func_ltwrapper_executable_p	libtool	/^func_ltwrapper_executable_p ()$/;"	f
 func_ltwrapper_executable_p	ltmain.sh	/^func_ltwrapper_executable_p ()$/;"	f
+func_ltwrapper_p	libtool	/^func_ltwrapper_p ()$/;"	f
 func_ltwrapper_p	ltmain.sh	/^func_ltwrapper_p ()$/;"	f
+func_ltwrapper_script_p	libtool	/^func_ltwrapper_script_p ()$/;"	f
 func_ltwrapper_script_p	ltmain.sh	/^func_ltwrapper_script_p ()$/;"	f
+func_ltwrapper_scriptname	libtool	/^func_ltwrapper_scriptname ()$/;"	f
 func_ltwrapper_scriptname	ltmain.sh	/^func_ltwrapper_scriptname ()$/;"	f
+func_missing_arg	libtool	/^func_missing_arg ()$/;"	f
 func_missing_arg	ltmain.sh	/^func_missing_arg ()$/;"	f
+func_mkdir_p	libtool	/^func_mkdir_p ()$/;"	f
 func_mkdir_p	ltmain.sh	/^func_mkdir_p ()$/;"	f
+func_mktempdir	libtool	/^func_mktempdir ()$/;"	f
 func_mktempdir	ltmain.sh	/^func_mktempdir ()$/;"	f
+func_mode_compile	libtool	/^func_mode_compile ()$/;"	f
 func_mode_compile	ltmain.sh	/^func_mode_compile ()$/;"	f
+func_mode_execute	libtool	/^func_mode_execute ()$/;"	f
 func_mode_execute	ltmain.sh	/^func_mode_execute ()$/;"	f
+func_mode_finish	libtool	/^func_mode_finish ()$/;"	f
 func_mode_finish	ltmain.sh	/^func_mode_finish ()$/;"	f
+func_mode_help	libtool	/^func_mode_help ()$/;"	f
 func_mode_help	ltmain.sh	/^func_mode_help ()$/;"	f
+func_mode_install	libtool	/^func_mode_install ()$/;"	f
 func_mode_install	ltmain.sh	/^func_mode_install ()$/;"	f
+func_mode_link	libtool	/^func_mode_link ()$/;"	f
 func_mode_link	ltmain.sh	/^func_mode_link ()$/;"	f
+func_mode_uninstall	libtool	/^func_mode_uninstall ()$/;"	f
 func_mode_uninstall	ltmain.sh	/^func_mode_uninstall ()$/;"	f
+func_normal_abspath	libtool	/^func_normal_abspath ()$/;"	f
 func_normal_abspath	ltmain.sh	/^func_normal_abspath ()$/;"	f
+func_parse_lt_options	libtool	/^func_parse_lt_options ()$/;"	f
 func_parse_lt_options	ltmain.sh	/^func_parse_lt_options ()$/;"	f
+func_quote_for_eval	libtool	/^func_quote_for_eval ()$/;"	f
 func_quote_for_eval	ltmain.sh	/^func_quote_for_eval ()$/;"	f
+func_quote_for_expand	libtool	/^func_quote_for_expand ()$/;"	f
 func_quote_for_expand	ltmain.sh	/^func_quote_for_expand ()$/;"	f
+func_relative_path	libtool	/^func_relative_path ()$/;"	f
 func_relative_path	ltmain.sh	/^func_relative_path ()$/;"	f
+func_replace_sysroot	libtool	/^func_replace_sysroot ()$/;"	f
 func_replace_sysroot	ltmain.sh	/^func_replace_sysroot ()$/;"	f
+func_resolve_sysroot	libtool	/^func_resolve_sysroot ()$/;"	f
 func_resolve_sysroot	ltmain.sh	/^func_resolve_sysroot ()$/;"	f
+func_show_eval	libtool	/^func_show_eval ()$/;"	f
 func_show_eval	ltmain.sh	/^func_show_eval ()$/;"	f
+func_show_eval_locale	libtool	/^func_show_eval_locale ()$/;"	f
 func_show_eval_locale	ltmain.sh	/^func_show_eval_locale ()$/;"	f
+func_source	libtool	/^func_source ()$/;"	f
 func_source	ltmain.sh	/^func_source ()$/;"	f
+func_split_long_opt	config.status	/^func_split_long_opt ()\\$/;"	f
 func_split_long_opt	configure	/^func_split_long_opt ()\\$/;"	f
+func_split_long_opt	libtool	/^func_split_long_opt ()$/;"	f
 func_split_long_opt	ltmain.sh	/^func_split_long_opt ()$/;"	f
+func_split_short_opt	config.status	/^func_split_short_opt ()\\$/;"	f
 func_split_short_opt	configure	/^func_split_short_opt ()\\$/;"	f
+func_split_short_opt	libtool	/^func_split_short_opt ()$/;"	f
 func_split_short_opt	ltmain.sh	/^func_split_short_opt ()$/;"	f
+func_stripname	config.status	/^func_stripname ()\\$/;"	f
 func_stripname	configure	/^func_stripname ()\\$/;"	f
+func_stripname	libtool	/^func_stripname ()$/;"	f
 func_stripname	ltmain.sh	/^func_stripname ()$/;"	f
+func_to_host_file	libtool	/^func_to_host_file ()$/;"	f
 func_to_host_file	ltmain.sh	/^func_to_host_file ()$/;"	f
+func_to_host_path	libtool	/^func_to_host_path ()$/;"	f
 func_to_host_path	ltmain.sh	/^func_to_host_path ()$/;"	f
+func_to_tool_file	libtool	/^func_to_tool_file ()$/;"	f
 func_to_tool_file	ltmain.sh	/^func_to_tool_file ()$/;"	f
+func_tr_sh	libtool	/^func_tr_sh ()$/;"	f
 func_tr_sh	ltmain.sh	/^func_tr_sh ()$/;"	f
+func_usage	libtool	/^func_usage ()$/;"	f
 func_usage	ltmain.sh	/^func_usage ()$/;"	f
+func_verbose	libtool	/^func_verbose ()$/;"	f
 func_verbose	ltmain.sh	/^func_verbose ()$/;"	f
+func_version	libtool	/^func_version ()$/;"	f
 func_version	ltmain.sh	/^func_version ()$/;"	f
+func_warning	libtool	/^func_warning ()$/;"	f
 func_warning	ltmain.sh	/^func_warning ()$/;"	f
+func_win32_import_lib_p	libtool	/^func_win32_import_lib_p ()$/;"	f
 func_win32_import_lib_p	ltmain.sh	/^func_win32_import_lib_p ()$/;"	f
+func_win32_libid	libtool	/^func_win32_libid ()$/;"	f
 func_win32_libid	ltmain.sh	/^func_win32_libid ()$/;"	f
+func_write_libtool_object	libtool	/^func_write_libtool_object ()$/;"	f
 func_write_libtool_object	ltmain.sh	/^func_write_libtool_object ()$/;"	f
+func_xform	config.status	/^func_xform ()\\$/;"	f
 func_xform	configure	/^func_xform ()\\$/;"	f
+func_xform	libtool	/^func_xform ()$/;"	f
 func_xform	ltmain.sh	/^func_xform ()$/;"	f
 function_thunk	ev++.h	/^    static void function_thunk (EV_P_ ev_watcher *w, int revents)$/;"	f	struct:ev::base
 get_clock	ev.c	/^get_clock (void)$/;"	f
@@ -1067,7 +1399,14 @@ have_realtime	ev.c	/^static EV_ATOMIC_T have_realtime; \/* did clock_gettime (CL
 head	ev.c	/^  WL head;$/;"	m	struct:__anon5	file:
 head	ev.c	/^  WL head;$/;"	m	struct:__anon7	file:
 head	ev.c	/^  WL head;$/;"	m	struct:__anon9	file:
+host	Makefile	/^host = x86_64-unknown-linux-gnu$/;"	m
+host_alias	Makefile	/^host_alias = $/;"	m
+host_cpu	Makefile	/^host_cpu = x86_64$/;"	m
+host_os	Makefile	/^host_os = linux-gnu$/;"	m
+host_triplet	Makefile	/^host_triplet = x86_64-unknown-linux-gnu$/;"	m
+host_vendor	Makefile	/^host_vendor = unknown$/;"	m
 how_t	ev++.h	/^  enum how_t$/;"	g	namespace:ev
+htmldir	Makefile	/^htmldir = ${docdir}$/;"	m
 idle	ev.h	/^  ev_idle idle;          \/* unused *\/$/;"	m	struct:ev_embed
 idle	ev.h	/^  struct ev_idle idle;$/;"	m	union:ev_any_watcher	typeref:struct:ev_any_watcher::ev_idle
 idle_reify	ev.c	/^idle_reify (EV_P)$/;"	f
@@ -1079,6 +1418,9 @@ idlemax	ev_wrap.h	141;"	d
 idlemax	ev_wrap.h	42;"	d
 idles	ev_wrap.h	142;"	d
 idles	ev_wrap.h	43;"	d
+include_HEADERS	Makefile	/^include_HEADERS = ev.h ev++.h event.h$/;"	m
+includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
+infodir	Makefile	/^infodir = ${datarootdir}\/info$/;"	m
 infy_add	ev.c	/^infy_add (EV_P_ ev_stat *w)$/;"	f	file:
 infy_cb	ev.c	/^infy_cb (EV_P_ ev_io *w, int revents)$/;"	f	file:
 infy_del	ev.c	/^infy_del (EV_P_ ev_stat *w)$/;"	f	file:
@@ -1089,6 +1431,10 @@ infy_wd	ev.c	/^infy_wd (EV_P_ int slot, int wd, struct inotify_event *ev)$/;"	f	
 inline_size	ev.c	1532;"	d	file:
 inline_speed	ev.c	1535;"	d	file:
 inline_speed	ev.c	1537;"	d	file:
+install_sh	Makefile	/^install_sh = ${SHELL} \/home\/sjc\/libev\/install-sh$/;"	m
+install_sh_DATA	Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_PROGRAM	Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
 int16_t	ev.c	/^  typedef   signed short  int16_t;$/;"	t	file:
 int32_t	ev.c	/^  typedef   signed int    int32_t;$/;"	t	file:
 int64_t	ev.c	/^    typedef   signed __int64   int64_t;$/;"	t	file:
@@ -1131,6 +1477,16 @@ kqueue_fork	ev_kqueue.c	/^kqueue_fork (EV_P)$/;"	f
 kqueue_init	ev_kqueue.c	/^kqueue_init (EV_P_ int flags)$/;"	f
 kqueue_modify	ev_kqueue.c	/^kqueue_modify (EV_P_ int fd, int oev, int nev)$/;"	f	file:
 kqueue_poll	ev_kqueue.c	/^kqueue_poll (EV_P_ ev_tstamp timeout)$/;"	f	file:
+lib_LTLIBRARIES	Makefile	/^lib_LTLIBRARIES = libev.la$/;"	m
+libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libev_la_LDFLAGS	Makefile	/^libev_la_LDFLAGS = -version-info $(VERSION_INFO)$/;"	m
+libev_la_LIBADD	Makefile	/^libev_la_LIBADD =$/;"	m
+libev_la_LINK	Makefile	/^libev_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \\$/;"	m
+libev_la_OBJECTS	Makefile	/^libev_la_OBJECTS = $(am_libev_la_OBJECTS)$/;"	m
+libev_la_SOURCES	Makefile	/^libev_la_SOURCES = ev.c event.c$/;"	m
+libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+localedir	Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localstatedir	Makefile	/^localstatedir = ${prefix}\/var$/;"	m
 loop	ev++.h	/^    void loop (int flags = 0)$/;"	f	struct:ev::loop_ref
 loop_count	ev_wrap.h	152;"	d
 loop_count	ev_wrap.h	53;"	d
@@ -1141,16 +1497,21 @@ loop_done	ev_wrap.h	55;"	d
 loop_fork	ev.c	/^loop_fork (EV_P)$/;"	f
 loop_ref	ev++.h	/^    loop_ref (EV_P) throw ()$/;"	f	struct:ev::loop_ref
 loop_ref	ev++.h	/^  struct loop_ref$/;"	s	namespace:ev
-lstat	ev.c	4271;"	d	file:
-lstat	ev.c	4272;"	d	file:
+lstat	ev.c	4283;"	d	file:
+lstat	ev.c	4284;"	d	file:
 main	config.guess	/^		main()$/;"	f
 main	config.guess	/^	main ()$/;"	f
 main	main.c	/^main (void)$/;"	f
 make_dummy_depfile	depcomp	/^make_dummy_depfile ()$/;"	f
+man3dir	Makefile	/^man3dir = $(mandir)\/man3$/;"	m
+man_MANS	Makefile	/^man_MANS = ev.3$/;"	m
+mandir	Makefile	/^mandir = ${datarootdir}\/man$/;"	m
 method_noargs_thunk	ev++.h	/^    static void method_noargs_thunk (EV_P_ ev_watcher *w, int revents)$/;"	f	struct:ev::base
 method_noargs_thunk	ev++.h	/^    static void method_noargs_thunk (int revents, void *arg)$/;"	f	struct:ev::loop_ref
 method_thunk	ev++.h	/^    static void method_thunk (EV_P_ ev_watcher *w, int revents)$/;"	f	struct:ev::base
 method_thunk	ev++.h	/^    static void method_thunk (int revents, void *arg)$/;"	f	struct:ev::loop_ref
+mkdir_p	Makefile	/^mkdir_p = $(MKDIR_P)$/;"	m
+mkinstalldirs	Makefile	/^mkinstalldirs = $(SHELL) $(top_srcdir)\/mkinstalldirs$/;"	m
 mn_now	ev_wrap.h	155;"	d
 mn_now	ev_wrap.h	56;"	d
 noinline	ev.c	1530;"	d	file:
@@ -1159,6 +1520,7 @@ now	ev++.h	/^  inline tstamp now (EV_P) throw ()$/;"	f	namespace:ev
 now_floor	ev_wrap.h	156;"	d
 now_floor	ev_wrap.h	57;"	d
 offset	ev.h	/^  ev_tstamp offset; \/* rw *\/$/;"	m	struct:ev_periodic
+oldincludedir	Makefile	/^oldincludedir = \/usr\/include$/;"	m
 once	ev++.h	/^    void once (int fd, int events, tstamp timeout) throw ()$/;"	f	struct:ev::loop_ref
 once	ev++.h	/^    void once (int fd, int events, tstamp timeout, K *object) throw ()$/;"	f	struct:ev::loop_ref
 once	ev++.h	/^    void once (int fd, int events, tstamp timeout, void (*cb)(int, void *), void *arg = 0) throw ()$/;"	f	struct:ev::loop_ref
@@ -1179,6 +1541,7 @@ other	ev.h	/^  struct ev_loop *other; \/* ro *\/$/;"	m	struct:ev_embed	typeref:s
 ow	ev.c	/^  OVERLAPPED or, ow;$/;"	m	struct:__anon5	file:
 pad	ev.c	/^  char pad[128 - sizeof (uint32_t)];$/;"	m	struct:signalfd_siginfo	file:
 path	ev.h	/^  const char *path;   \/* ro *\/$/;"	m	struct:ev_stat
+pdfdir	Makefile	/^pdfdir = ${docdir}$/;"	m
 pending	ev.c	/^  EV_ATOMIC_T pending;$/;"	m	struct:__anon9	file:
 pending_w	ev_wrap.h	158;"	d
 pending_w	ev_wrap.h	59;"	d
@@ -1212,6 +1575,10 @@ pipe_write_skipped	ev_wrap.h	68;"	d
 pipe_write_wanted	ev_wrap.h	168;"	d
 pipe_write_wanted	ev_wrap.h	69;"	d
 pipecb	ev.c	/^pipecb (EV_P_ ev_io *iow, int revents)$/;"	f	file:
+pkgdatadir	Makefile	/^pkgdatadir = $(datadir)\/libev$/;"	m
+pkgincludedir	Makefile	/^pkgincludedir = $(includedir)\/libev$/;"	m
+pkglibdir	Makefile	/^pkglibdir = $(libdir)\/libev$/;"	m
+pkglibexecdir	Makefile	/^pkglibexecdir = $(libexecdir)\/libev$/;"	m
 poll_destroy	ev_poll.c	/^poll_destroy (EV_P)$/;"	f
 poll_init	ev_poll.c	/^poll_init (EV_P_ int flags)$/;"	f
 poll_modify	ev_poll.c	/^poll_modify (EV_P_ int fd, int oev, int nev)$/;"	f	file:
@@ -1240,6 +1607,7 @@ port_poll	ev_port.c	/^port_poll (EV_P_ ev_tstamp timeout)$/;"	f	file:
 post_fork	ev++.h	/^    void post_fork () throw ()$/;"	f	struct:ev::loop_ref
 postfork	ev_wrap.h	176;"	d
 postfork	ev_wrap.h	77;"	d
+prefix	Makefile	/^prefix = \/usr\/local$/;"	m
 prepare	ev.h	/^  ev_prepare prepare;    \/* private *\/$/;"	m	struct:ev_embed
 prepare	ev.h	/^  struct ev_prepare prepare;$/;"	m	union:ev_any_watcher	typeref:struct:ev_any_watcher::ev_prepare
 preparecnt	ev_wrap.h	177;"	d
@@ -1251,7 +1619,9 @@ prepares	ev_wrap.h	80;"	d
 prev	ev.h	/^  ev_statdata prev;   \/* ro *\/$/;"	m	struct:ev_stat
 pri_adjust	ev.c	/^pri_adjust (EV_P_ W w)$/;"	f
 program_details	missing	/^program_details ()$/;"	f
+program_transform_name	Makefile	/^program_transform_name = s,x,x,$/;"	m
 prototypes	configure	/^   function prototypes and stuff, but not '\\xHH' hex character constants.$/;"	f
+psdir	Makefile	/^psdir = ${docdir}$/;"	m
 queue_events	ev.c	/^queue_events (EV_P_ W *events, int eventcnt, int type)$/;"	f
 recommended_backends	ev++.h	/^  inline unsigned int recommended_backends () throw ()$/;"	f	namespace:ev
 ref	ev++.h	/^    void ref () throw ()$/;"	f	struct:ev::loop_ref
@@ -1272,6 +1642,7 @@ rstatus	ev.h	/^  int rstatus; \/* rw, holds the exit status, use the macros from
 rtmn_diff	ev_wrap.h	184;"	d
 rtmn_diff	ev_wrap.h	85;"	d
 run	ev++.h	/^    void run (int flags = 0)$/;"	f	struct:ev::loop_ref
+sbindir	Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
 select_destroy	ev_select.c	/^select_destroy (EV_P)$/;"	f
 select_init	ev_select.c	/^select_init (EV_P_ int flags)$/;"	f
 select_modify	ev_select.c	/^select_modify (EV_P_ int fd, int oev, int nev)$/;"	f	file:
@@ -1297,6 +1668,7 @@ set_embed	ev++.h	/^    void set_embed (struct ev_loop *embedded_loop) throw ()$/
 set_io_collect_interval	ev++.h	/^    void set_io_collect_interval (tstamp interval) throw ()$/;"	f	struct:ev::loop_ref
 set_syserr_cb	ev++.h	/^  inline void set_syserr_cb (void (*cb)(const char *msg) throw ()) throw ()$/;"	f	namespace:ev
 set_timeout_collect_interval	ev++.h	/^    void set_timeout_collect_interval (tstamp interval) throw ()$/;"	f	struct:ev::loop_ref
+sharedstatedir	Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
 sig	event.h	/^    struct ev_signal sig;$/;"	m	union:event::__anon1	typeref:struct:event::__anon1::ev_signal
 sig_pending	ev_wrap.h	185;"	d
 sig_pending	ev_wrap.h	86;"	d
@@ -1318,6 +1690,7 @@ signals	ev.c	/^static ANSIG signals [EV_NSIG - 1];$/;"	v	file:
 signum	ev.h	/^  int signum; \/* ro *\/$/;"	m	struct:ev_signal
 simpler_func_thunk	ev++.h	/^    static void simpler_func_thunk (int revents, void *arg)$/;"	f	struct:ev::loop_ref
 simplest_func_thunk	ev++.h	/^    static void simplest_func_thunk (int revents, void *arg)$/;"	f	struct:ev::loop_ref
+srcdir	Makefile	/^srcdir = .$/;"	m
 ssi_signo	ev.c	/^  uint32_t ssi_signo;$/;"	m	struct:signalfd_siginfo	file:
 start	ev++.h	/^    void start (const char *path, ev_tstamp interval = 0.) throw ()$/;"	f	namespace:ev
 start	ev++.h	/^    void start (ev_tstamp after, ev_tstamp repeat = 0.) throw ()$/;"	f	namespace:ev
@@ -1330,8 +1703,16 @@ stat	ev.h	/^  struct ev_stat stat;$/;"	m	union:ev_any_watcher	typeref:struct:ev_
 stat_timer_cb	ev.c	/^stat_timer_cb (EV_P_ ev_timer *w_, int revents)$/;"	f	file:
 stdin_cb	main.c	/^stdin_cb (EV_P_ ev_io *w, int revents)$/;"	f	file:
 stdin_watcher	main.c	/^ev_io stdin_watcher;$/;"	v
+subdir	Makefile	/^subdir = .$/;"	m
 supported_backends	ev++.h	/^  inline unsigned int supported_backends () throw ()$/;"	f	namespace:ev
 sweep	ev++.h	/^    void sweep ()$/;"	f	namespace:ev
+sysconfdir	Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | BZIP2=$${BZIP2--9} bzip2 -c >$(distdir).tar.bz2$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | GZIP=$(GZIP_ENV) gzip -c >$(distdir).tar.gz$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | XZ_OPT=$${XZ_OPT--e} xz -c >$(distdir).tar.xz$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | compress -c >$(distdir).tar.Z$/;"	m
+tardir	Makefile	/^	tardir=$(distdir) && $(am__tar) | lzip -c $${LZIP_OPT--9} >$(distdir).tar.lz$/;"	m
+target_alias	Makefile	/^target_alias = $/;"	m
 time_update	ev.c	/^time_update (EV_P_ ev_tstamp max_block)$/;"	f
 timeout_add	event.h	118;"	d
 timeout_blocktime	ev_wrap.h	189;"	d
@@ -1355,6 +1736,11 @@ timers_reify	ev.c	/^timers_reify (EV_P)$/;"	f
 timers_reschedule	ev.c	/^timers_reschedule (EV_P_ ev_tstamp adjust)$/;"	f	file:
 to	ev.c	/^  ev_timer to;$/;"	m	struct:ev_once	file:
 to	event.h	/^  struct ev_timer to;$/;"	m	struct:event	typeref:struct:event::ev_timer
+top_build_prefix	Makefile	/^top_build_prefix = $/;"	m
+top_builddir	Makefile	/^top_builddir = .$/;"	m
+top_distdir	Makefile	/^top_distdir = $(distdir)$/;"	m
+top_srcdir	Makefile	/^top_srcdir = .$/;"	m
+transform	Makefile	/^transform = $(program_transform_name)$/;"	m
 tstamp	ev++.h	/^  typedef ev_tstamp tstamp;$/;"	t	namespace:ev
 type	ev.c	/^  template<class T> struct ecb_decltype_t { typedef T type; };$/;"	t	struct:ecb_decltype_t	file:
 uint16_t	ev.c	/^  typedef unsigned short uint16_t;$/;"	t	file:

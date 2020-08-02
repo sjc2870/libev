@@ -36,6 +36,7 @@ main (void)
 {
   // use the default event loop unless you have special needs
   struct ev_loop *loop = EV_DEFAULT;
+  printf("before ev_io_init\n");
 
   // initialise an io watcher, then start it
   // this one will watch for stdin to become readable
@@ -49,7 +50,6 @@ main (void)
   //ev_timer_start (loop, &timeout_watcher);
 
   // now wait for events to arrive
-  printf("ev_run begin\n");
   ev_run (loop, 0);
 
   // break was called, so exit

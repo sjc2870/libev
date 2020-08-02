@@ -2413,6 +2413,7 @@ static ANSIG signals [EV_NSIG - 1];
 static void noinline ecb_cold
 evpipe_init (EV_P)
 {
+  printf("%s\n",__func__);
   if (!ev_is_active (&pipe_w))
     {
       int fds [2];
@@ -2432,6 +2433,7 @@ evpipe_init (EV_P)
           fd_intern (fds [0]);
         }
 
+      printf("fds[0] is %d,fds[1] is %d\n",fds[0],fds[1]);
       evpipe [0] = fds [0];
 
       if (evpipe [1] < 0)
@@ -2449,6 +2451,8 @@ evpipe_init (EV_P)
 
       fd_intern (evpipe [1]);
 
+      printf("evpipe[0] is %d,evpipe[1] is %d\n",evpipe[0],evpipe[1]);
+      //这里evpipe[0]<0的判断是为了支持eventfd
       ev_io_set (&pipe_w, evpipe [0] < 0 ? evpipe [1] : evpipe [0], EV_READ);
       ev_io_start (EV_A_ &pipe_w);
       ev_unref (EV_A); /* watcher should not keep loop alive */
@@ -3077,6 +3081,7 @@ inline_size void infy_fork (EV_P);
 inline_size void
 loop_fork (EV_P)
 {
+  printf("%s\n",__func__);
 #if EV_USE_PORT
   if (backend == EVBACKEND_PORT  ) port_fork   (EV_A);
 #endif
@@ -4123,6 +4128,7 @@ ev_periodic_again (EV_P_ ev_periodic *w) EV_THROW
 void noinline
 ev_signal_start (EV_P_ ev_signal *w) EV_THROW
 {
+  printf("%s\n",__func__);
   if (expect_false (ev_is_active (w)))
     return;
 
@@ -4141,7 +4147,9 @@ ev_signal_start (EV_P_ ev_signal *w) EV_THROW
 #if EV_USE_SIGNALFD
   if (sigfd == -2)
     {
+      printf("EV_USE_SIGNALFD\n");
       sigfd = signalfd (-1, &sigfd_set, SFD_NONBLOCK | SFD_CLOEXEC);
+      printf("sigfd is %d\n",sigfd);
       if (sigfd < 0 && errno == EINVAL)
         sigfd = signalfd (-1, &sigfd_set, 0); /* retry without flags */
 
@@ -4458,6 +4466,7 @@ infy_newfd (void)
 inline_size void
 infy_init (EV_P)
 {
+  printf("%s\n",__func__);
   if (fs_fd != -2)
     return;
 
@@ -4480,6 +4489,7 @@ infy_init (EV_P)
 inline_size void
 infy_fork (EV_P)
 {
+  printf("%s\n",__func__);
   int slot;
 
   if (fs_fd < 0)
@@ -4821,6 +4831,7 @@ embed_idle_cb (EV_P_ ev_idle *idle, int revents)
 void
 ev_embed_start (EV_P_ ev_embed *w) EV_THROW
 {
+  printf("%s\n",__func__);
   if (expect_false (ev_is_active (w)))
     return;
 
@@ -4951,6 +4962,7 @@ ev_cleanup_stop (EV_P_ ev_cleanup *w) EV_THROW
 void
 ev_async_start (EV_P_ ev_async *w) EV_THROW
 {
+  printf("%s\n",__func__);
   if (expect_false (ev_is_active (w)))
     return;
 
@@ -5038,6 +5050,7 @@ once_cb_to (EV_P_ ev_timer *w, int revents)
 void
 ev_once (EV_P_ int fd, int events, ev_tstamp timeout, void (*cb)(int revents, void *arg), void *arg) EV_THROW
 {
+  printf("%s\n",__func__);
   struct ev_once *once = (struct ev_once *)ev_malloc (sizeof (struct ev_once));
 
   if (expect_false (!once))
