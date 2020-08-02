@@ -44,8 +44,8 @@ main (void)
 
   // initialise a timer watcher, then start it
   // simple non-repeating 5.5 second timeout
-  ev_timer_init (&timeout_watcher, timeout_cb, 5.5, 0.);
-  ev_timer_start (loop, &timeout_watcher);
+//  ev_timer_init (&timeout_watcher, timeout_cb, 5.5, 0.);
+  //ev_timer_start (loop, &timeout_watcher);
 
   // now wait for events to arrive
   ev_run (loop, 0);
