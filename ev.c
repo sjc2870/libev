@@ -3912,6 +3912,7 @@ ev_io_start (EV_P_ ev_io *w) EV_THROW
   assert (("libev: ev_io_start called with corrupted watcher", ((WL)w)->next != (WL)w));
 
   //为什么要w->events&EV__IOFDSET|EV_ANFD_REIFY
+  //EV_IOFDSET:0x80:1000 0000
   fd_change (EV_A_ fd, w->events & EV__IOFDSET | EV_ANFD_REIFY);
   //这步又是为什么？
   w->events &= ~EV__IOFDSET;
