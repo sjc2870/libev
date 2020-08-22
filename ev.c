@@ -2130,8 +2130,10 @@ fd_reify (EV_P)
             o_reify = EV__IOFDSET; /* actually |= */
         }
 
-      if (o_reify & EV__IOFDSET)
+      if (o_reify & EV__IOFDSET){
+          printf("%s:o_events is 0x%02x,anfd->events is 0x%02x\n",__func__,o_events, anfd->events);
         backend_modify (EV_A_ fd, o_events, anfd->events);
+      }
     }
 
   fdchangecnt = 0;
@@ -2419,6 +2421,7 @@ evpipe_init (EV_P)
       int fds [2];
 
 # if EV_USE_EVENTFD
+      printf("USE_EVENTFD\n");
       fds [0] = -1;
       fds [1] = eventfd (0, EFD_NONBLOCK | EFD_CLOEXEC);
       if (fds [1] < 0 && errno == EINVAL)
